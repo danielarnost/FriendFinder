@@ -1,4 +1,4 @@
-var userArray = [
+var friendArr = [
 	{
 		name: "Iggy Pop",
 		photo: "https://www.morrisonhotelgallery.com/images/medium/Iggy%20Pop-Slouch.jpg",
@@ -11,7 +11,7 @@ var userArray = [
 	},
 	{
 		name: "Adele",
-		photo: "http://i.dailymail.co.uk/i/pix/2015/10/21/12/1FE7DBDD00000578-3282733-Adele-a-15_1445427876133.jpg.jpg",
+		photo: "https://pbs.twimg.com/media/CdrCs9qWEAApGKR.jpg",
 		scores: [5, 1, 5, 3, 4, 1, 3, 2, 4, 1]
 	},
 	{
@@ -20,9 +20,10 @@ var userArray = [
 		scores: [4, 1, 5, 3, 2, 1, 2, 4, 4, 2]
 	},
 	{
-		name: "Bernie Saners",
+		name: "Bernie Sanders",
 		photo: "https://img1.steemit.com/0x0/http://moonbattery.com/graphics/BERNIE-SANDERS.jpg",
-		scores: [3, 4, 1, 4, 5, 3, 1, 4, 1, 5]
+		scores: [4, 4, 1, 4, 2, 1, 5, 4, 1, 5]
 	}
 ]
-module.exports = userArray;
+
+module.exports = friendArr;
