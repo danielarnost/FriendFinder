@@ -1,24 +1,43 @@
 var friendsData = require('../data/friends.js');
-var path = require('path');
+var path        = require('path');
 
-module.exports = function(app){
+module.exports = function(app) {
 
-	app.get('/api/friends', function(req,res) {
-		res.json(friendsData);
-	})
+    app.get('/api/friends', function(req, res) {
+        res.json(friendsData);
+    })
 
-app.post('/api/friends', function(req,res) {
-		
-		var newScores = [];
+    app.post('/api/friends', function(req, res) {
+        //console.log(friendsData.length);
+        var userAnswers = [];
 
-		for (var i = 0; i<req.body.scores.length; i++) {
-			newScores.push(parseInt(req.body.scores[i]));	
-		}
+        for (var i = 0; i < req.body.scores.length; i++) {
+            userAnswers.push(parseInt(req.body.scores[i]));
+        }
 
+        var differences = 0;
+        var totalDifferences = [];
+        for (var j = 0; j < 5; j++) {
+            for (var i = 0; i < 10; i++) {
 
-	app.post('/api/friends', function(req,res) {
-		var userAnswers = [];
+                differences = differences + Math.abs(parseInt(friendsData[j].scores[i]) - parseInt(userAnswers[i]));
 
-difference = difference + Math.abs(parseInt(friendsData[i].scores[j]) - parseInt(userAnswers[j]))
-	}
+            }
+
+            totalDifferences.push(differences);
+            console.log(totalDifferences);
+            differences = 0;
+        }
+
+        var lowest = 0;
+        for (var i = 0; i < totalDifferences.length; i++) {
+            if (totalDifferences[i] < totalDifferences[lowest]) {
+                lowest = i;
+            }
+
+        }
+
+        res.json(friendsData[lowest]);
+
+    });
 }
