@@ -4,13 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Survey</title>
-   
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 </head>
 
 <body>
@@ -172,7 +169,6 @@
                 <input type="radio" name="optradio10" value="5">5 (strongly agree)</label>
         </div>
         <button type="submit" onclick="checked()" class="btn btn-primary btn-lg col-lg-12" id="submit" data-toggle="modal" data-target="#matchModal" style="margin:20px"><span class="glyphicon glyphicon-ok"></span> Submit</button>
-        
         <div id="matchModal" class="modal fade" role="dialog">
             <div class="modal-dialog text-center">
                 <!-- Modal content-->
@@ -191,12 +187,9 @@
                 </div>
             </div>
         </div>
-
-
         <script>
-        
         function checked() {
-            
+
             var userAnswers = [parseInt($('#q1 input:radio:checked').val()), parseInt($('#q2 input:radio:checked').val()), parseInt($('#q3 input:radio:checked').val()), parseInt($('#q4 input:radio:checked').val()), parseInt($('#q5 input:radio:checked').val()), parseInt($('#q6 input:radio:checked').val()), parseInt($('#q7 input:radio:checked').val()), parseInt($('#q8 input:radio:checked').val()), parseInt($('#q9 input:radio:checked').val()), parseInt($('#q10 input:radio:checked').val())];
             var newName = $("#name1").val().trim();
             var newPhoto = $("#photo").val().trim();
